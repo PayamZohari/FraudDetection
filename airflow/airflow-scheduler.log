@@ -1,0 +1,80 @@
+2024-06-25 21:03:47,365 INFO - Starting the scheduler
+2024-06-25 21:03:47,366 INFO - Processing each file at most -1 times
+2024-06-25 21:03:47,370 INFO - Launched DagFileProcessorManager with pid: 43156
+2024-06-25 21:03:47,370 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:03:47,372 INFO - Configured default timezone Timezone('UTC')
+2024-06-25 21:08:47,530 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:13:47,679 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:18:47,820 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:23:47,970 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:28:48,117 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:33:48,264 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:34:13,642 INFO - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 21:34:10.704323+00:00: manual__2024-06-25T21:34:10.704323+00:00, state:running, queued_at: 2024-06-25 21:34:10.711484+00:00. externally triggered: True> successful
+2024-06-25 21:34:13,643 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 21:34:10.704323+00:00, run_id=manual__2024-06-25T21:34:10.704323+00:00, run_start_date=2024-06-25 21:34:11.130961+00:00, run_end_date=2024-06-25 21:34:13.643148+00:00, run_duration=2.512187, state=success, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 21:38:48,350 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:39:03,607 ERROR - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 21:35:18.871768+00:00: manual__2024-06-25T21:35:18.871768+00:00, state:running, queued_at: 2024-06-25 21:35:18.879044+00:00. externally triggered: True> failed
+2024-06-25 21:39:03,607 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 21:35:18.871768+00:00, run_id=manual__2024-06-25T21:35:18.871768+00:00, run_start_date=2024-06-25 21:35:19.846751+00:00, run_end_date=2024-06-25 21:39:03.607861+00:00, run_duration=223.76111, state=failed, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 21:39:32,443 ERROR - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 21:39:15.339716+00:00: manual__2024-06-25T21:39:15.339716+00:00, state:running, queued_at: 2024-06-25 21:39:15.344371+00:00. externally triggered: True> failed
+2024-06-25 21:39:32,443 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 21:39:15.339716+00:00, run_id=manual__2024-06-25T21:39:15.339716+00:00, run_start_date=2024-06-25 21:39:16.764787+00:00, run_end_date=2024-06-25 21:39:32.443883+00:00, run_duration=15.679096, state=failed, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 21:43:48,504 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:45:32,708 INFO - 1 tasks up for execution:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T21:45:31.369069+00:00 [scheduled]>
+2024-06-25 21:45:32,709 INFO - DAG my_clickhouse_dag has 0/16 running and queued tasks
+2024-06-25 21:45:32,709 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T21:45:31.369069+00:00 [scheduled]>
+2024-06-25 21:45:32,711 WARNING - cannot record scheduled_duration for task read_from_clickhouse_and_apply_model because previous state change time has not been saved
+2024-06-25 21:45:32,711 INFO - Sending TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T21:45:31.369069+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2024-06-25 21:45:32,711 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T21:45:31.369069+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 21:45:32,713 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T21:45:31.369069+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 21:45:35,315 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T21:45:31.369069+00:00', try_number=1, map_index=-1)
+2024-06-25 21:45:35,320 INFO - TaskInstance Finished: dag_id=my_clickhouse_dag, task_id=read_from_clickhouse_and_apply_model, run_id=manual__2024-06-25T21:45:31.369069+00:00, map_index=-1, run_start_date=2024-06-25 21:45:34.791085+00:00, run_end_date=2024-06-25 21:45:34.890438+00:00, run_duration=0.099353, state=up_for_retry, executor_state=success, try_number=1, max_tries=1, job_id=9, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2024-06-25 21:45:32.709524+00:00, queued_by_job_id=5, pid=56115
+2024-06-25 21:46:06,820 ERROR - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 21:45:31.369069+00:00: manual__2024-06-25T21:45:31.369069+00:00, state:running, queued_at: 2024-06-25 21:45:31.373752+00:00. externally triggered: True> failed
+2024-06-25 21:46:06,820 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 21:45:31.369069+00:00, run_id=manual__2024-06-25T21:45:31.369069+00:00, run_start_date=2024-06-25 21:45:32.693375+00:00, run_end_date=2024-06-25 21:46:06.820936+00:00, run_duration=34.127561, state=failed, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 21:48:48,655 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:53:48,788 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 21:58:07,619 ERROR - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 21:53:02.272275+00:00: manual__2024-06-25T21:53:02.272275+00:00, state:running, queued_at: 2024-06-25 21:53:02.278048+00:00. externally triggered: True> failed
+2024-06-25 21:58:07,620 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 21:53:02.272275+00:00, run_id=manual__2024-06-25T21:53:02.272275+00:00, run_start_date=2024-06-25 21:53:03.381821+00:00, run_end_date=2024-06-25 21:58:07.620068+00:00, run_duration=304.238247, state=failed, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 21:58:48,920 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 22:02:19,099 INFO - 1 tasks up for execution:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T22:02:18.952885+00:00 [scheduled]>
+2024-06-25 22:02:19,099 INFO - DAG my_clickhouse_dag has 0/16 running and queued tasks
+2024-06-25 22:02:19,099 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T22:02:18.952885+00:00 [scheduled]>
+2024-06-25 22:02:19,100 WARNING - cannot record scheduled_duration for task read_from_clickhouse_and_apply_model because previous state change time has not been saved
+2024-06-25 22:02:19,100 INFO - Sending TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T22:02:18.952885+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2024-06-25 22:02:19,100 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T22:02:18.952885+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 22:02:19,102 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T22:02:18.952885+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 22:02:21,554 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T22:02:18.952885+00:00', try_number=1, map_index=-1)
+2024-06-25 22:02:21,557 INFO - TaskInstance Finished: dag_id=my_clickhouse_dag, task_id=read_from_clickhouse_and_apply_model, run_id=manual__2024-06-25T22:02:18.952885+00:00, map_index=-1, run_start_date=2024-06-25 22:02:21.107616+00:00, run_end_date=2024-06-25 22:02:21.187090+00:00, run_duration=0.079474, state=up_for_retry, executor_state=success, try_number=1, max_tries=1, job_id=12, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2024-06-25 22:02:19.099984+00:00, queued_by_job_id=5, pid=60786
+2024-06-25 22:03:49,054 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 22:08:49,201 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 22:09:09,552 INFO - 1 tasks up for execution:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T22:04:06.388344+00:00 [scheduled]>
+2024-06-25 22:09:09,552 INFO - DAG my_clickhouse_dag has 0/16 running and queued tasks
+2024-06-25 22:09:09,552 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T22:04:06.388344+00:00 [scheduled]>
+2024-06-25 22:09:09,553 INFO - Sending TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T22:04:06.388344+00:00', try_number=2, map_index=-1) to executor with priority 1 and queue default
+2024-06-25 22:09:09,553 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T22:04:06.388344+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 22:09:09,555 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T22:04:06.388344+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 22:09:11,655 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T22:04:06.388344+00:00', try_number=2, map_index=-1)
+2024-06-25 22:09:11,657 INFO - TaskInstance Finished: dag_id=my_clickhouse_dag, task_id=read_from_clickhouse_and_apply_model, run_id=manual__2024-06-25T22:04:06.388344+00:00, map_index=-1, run_start_date=2024-06-25 22:09:11.251817+00:00, run_end_date=2024-06-25 22:09:11.322572+00:00, run_duration=0.070755, state=failed, executor_state=success, try_number=2, max_tries=1, job_id=14, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2024-06-25 22:09:09.552631+00:00, queued_by_job_id=5, pid=62990
+2024-06-25 22:09:11,797 ERROR - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 22:04:06.388344+00:00: manual__2024-06-25T22:04:06.388344+00:00, state:running, queued_at: 2024-06-25 22:04:06.393171+00:00. externally triggered: True> failed
+2024-06-25 22:09:11,797 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 22:04:06.388344+00:00, run_id=manual__2024-06-25T22:04:06.388344+00:00, run_start_date=2024-06-25 22:04:07.109214+00:00, run_end_date=2024-06-25 22:09:11.797316+00:00, run_duration=304.688102, state=failed, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 22:13:49,339 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 22:16:19,249 INFO - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 22:16:15.867259+00:00: manual__2024-06-25T22:16:15.867259+00:00, state:running, queued_at: 2024-06-25 22:16:15.872066+00:00. externally triggered: True> successful
+2024-06-25 22:16:19,250 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 22:16:15.867259+00:00, run_id=manual__2024-06-25T22:16:15.867259+00:00, run_start_date=2024-06-25 22:16:16.157935+00:00, run_end_date=2024-06-25 22:16:19.249974+00:00, run_duration=3.092039, state=success, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 22:18:49,484 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 22:23:33,175 INFO - 1 tasks up for execution:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T22:18:29.240613+00:00 [scheduled]>
+2024-06-25 22:23:33,175 INFO - DAG my_clickhouse_dag has 0/16 running and queued tasks
+2024-06-25 22:23:33,175 INFO - Setting the following tasks to queued state:
+	<TaskInstance: my_clickhouse_dag.read_from_clickhouse_and_apply_model manual__2024-06-25T22:18:29.240613+00:00 [scheduled]>
+2024-06-25 22:23:33,176 INFO - Sending TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T22:18:29.240613+00:00', try_number=2, map_index=-1) to executor with priority 1 and queue default
+2024-06-25 22:23:33,176 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T22:18:29.240613+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 22:23:33,177 INFO - Executing command: ['airflow', 'tasks', 'run', 'my_clickhouse_dag', 'read_from_clickhouse_and_apply_model', 'manual__2024-06-25T22:18:29.240613+00:00', '--local', '--subdir', 'DAGS_FOLDER/main.py']
+2024-06-25 22:23:35,979 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='my_clickhouse_dag', task_id='read_from_clickhouse_and_apply_model', run_id='manual__2024-06-25T22:18:29.240613+00:00', try_number=2, map_index=-1)
+2024-06-25 22:23:35,982 INFO - TaskInstance Finished: dag_id=my_clickhouse_dag, task_id=read_from_clickhouse_and_apply_model, run_id=manual__2024-06-25T22:18:29.240613+00:00, map_index=-1, run_start_date=2024-06-25 22:23:34.902617+00:00, run_end_date=2024-06-25 22:23:35.672870+00:00, run_duration=0.770253, state=failed, executor_state=success, try_number=2, max_tries=1, job_id=18, pool=default_pool, queue=default, priority_weight=1, operator=PythonOperator, queued_dttm=2024-06-25 22:23:33.175897+00:00, queued_by_job_id=5, pid=67598
+2024-06-25 22:23:49,628 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-25 22:28:21,472 INFO - Marking run <DagRun my_clickhouse_dag @ 2024-06-25 22:28:13.593744+00:00: manual__2024-06-25T22:28:13.593744+00:00, state:running, queued_at: 2024-06-25 22:28:13.605622+00:00. externally triggered: True> successful
+2024-06-25 22:28:21,473 INFO - DagRun Finished: dag_id=my_clickhouse_dag, execution_date=2024-06-25 22:28:13.593744+00:00, run_id=manual__2024-06-25T22:28:13.593744+00:00, run_start_date=2024-06-25 22:28:14.157498+00:00, run_end_date=2024-06-25 22:28:21.472952+00:00, run_duration=7.315454, state=success, external_trigger=True, run_type=manual, data_interval_start=2024-06-24 00:00:00+00:00, data_interval_end=2024-06-25 00:00:00+00:00, dag_hash=5f4014f034df2b9828094e02b86a9cca
+2024-06-25 22:28:49,782 INFO - Adopting or resetting orphaned tasks for active dag runs

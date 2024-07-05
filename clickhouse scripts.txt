@@ -1,0 +1,43 @@
+show databases;
+
+create database trenddb;
+
+show tables;
+
+////////////////////////////
+create table ads_per_hour(updated_at DateTime, camp_id String, scope_id String, ads_id String, event String, count UInt64, translated Boolean, camp_title String, scope_title String, ads_title String, customer_title String) Engine = MergeTree ORDER BY ( updated_at, camp_id, event ) TTL updated_at + INTERVAL 24 HOUR;
+
+create table ads_per_day(updated_at DateTime, camp_id String, scope_id String, ads_id String, event String, count UInt64, translated Boolean, camp_title String, scope_title String, ads_title String, customer_title String) Engine = MergeTree ORDER BY ( updated_at, camp_id, event ) TTL updated_at + INTERVAL 30 DAY;
+
+create table ads_per_month(updated_at DateTime, camp_id String, scope_id String, ads_id String, event String, count UInt64, translated Boolean, camp_title String, scope_title String, ads_title String, customer_title String) Engine = MergeTree ORDER BY ( updated_at, camp_id, event ) TTL updated_at + INTERVAL 12 MONTH;
+
+create table ads_per_year(updated_at DateTime, camp_id String, scope_id String, ads_id String, event String, count UInt64, translated Boolean, camp_title String, scope_title String, ads_title String, customer_title String) Engine = MergeTree ORDER BY ( updated_at, camp_id, event );
+
+////////////////////////
+
+
+create table ads_queue ( params String, event String ) ENGINE = Kafka('192.168.132.195:9092,192.168.132.193:9092,192.168.132.193:9092,192.168.132.198:9092,192.168132.201:9092','tw_analytics','kafka_engine_consumer','JSONEachRow');
+
+/////////////////////////////////////
+
+CREATE MATERIALIZED VIEW ads2hour_mv TO ads_per_hour AS
+SELECT splitByChar('_',params) AS params_values,toStartOfHour(_timestamp) as updated_at,  params_values[1] as camp_id, params_values[2] as scope_id, params_values[3] as ads_id, event as event, count() as count  
+FROM ads_queue GROUP BY toStartOfHour(_timestamp), params, event;
+
+
+CREATE MATERIALIZED VIEW hour2day_mv TO ads_per_day AS
+SELECT camp_id as camp_id, scope_id as scope_id, ads_id as ads_id, event as event, count() as count  
+FROM ads_queue GROUP BY toStartOfDay(updated_at), camp_id, scope_id, ads_id, event;
+
+CREATE MATERIALIZED VIEW day2month_mv TO ads_per_month AS
+SELECT camp_id as camp_id, scope_id as scope_id, ads_id as ads_id, event as event, count() as count  
+FROM ads_queue GROUP BY toStartOfMonth(updated_at), camp_id, scope_id, ads_id, event;
+
+CREATE MATERIALIZED VIEW month2year_mv TO ads_per_year AS
+SELECT camp_id as camp_id, scope_id as scope_id, ads_id as ads_id, event as event, count() as count  
+FROM ads_queue GROUP BY toStartOfYear(updated_at), camp_id, scope_id, ads_id, event;
+
+
+
+
+
